@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth', 'userMiddleware'])->group(function () {
 
     Route::get('dashboard',[UserController::class,'index'])->name('dashboard');
+    Route::get('favorite',[FavoriteController::class,'index'])->name('user.favorite');
 });
 
 
